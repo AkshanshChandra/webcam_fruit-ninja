@@ -1,0 +1,9 @@
+# MediaPipe 1.0.x aborts on macOS (Metal helper crash in the hand graph), so stay on 0.10.x.
+mediapipe>=0.10.14,<1.0
+# MediaPipe depends on opencv-contrib-python, which provides the same `cv2` module as
+# opencv-python. Installing both makes them overwrite each other, so only the contrib
+# build is listed. OpenCV 5.x bundles its own SDL on macOS; 4.x is the tested line.
+opencv-contrib-python>=4.9,<5
+numpy>=1.24
+pillow>=10.1
+sounddevice>=0.4.6
